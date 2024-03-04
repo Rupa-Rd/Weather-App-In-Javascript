@@ -17,7 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
 async function checkWeather(city) {
     // console.log("Function is running"+city);
     const response = await fetch(apiURL + city +`&appid=${apiKey}`);
-    var data = await response.json();
+    if (response.status == 404){
+        document.querySelector(".error").style.display = "block";
+        document.querySelector(".weather").style.display = "none";
+    }else{
+        var data = await response.json();
+        document.querySelector(".error").style.display = "none";
 
     console.log(data);
     document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + " °C";
@@ -30,6 +35,8 @@ async function checkWeather(city) {
 
 
     document.querySelector('.weather').style.display = "block";
+    }
+    
 }
 
 
