@@ -27,6 +27,9 @@ async function checkWeather(city) {
     const weather = data.weather[0].main;
     document.querySelector('.weather img').src="images/" +weather.toLowerCase()+".png";
     console.log(weather);
+
+
+    document.querySelector('.weather').style.display = "block";
 }
 
 
