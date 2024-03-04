@@ -1,6 +1,6 @@
 // https://api.openweathermap.org/data/2.5/weather?q={city}&appid={apiKey}
 
-const apiKey = "e8298b2d3706e3e91277689402f11724";
+const apiKey = "";
 const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 
